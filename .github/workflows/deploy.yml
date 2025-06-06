@@ -1,0 +1,43 @@
+name: Deploy Angular App to GitHub Pages
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  build-and-deploy:
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Checkout Code
+      uses: actions/checkout@v2
+
+    - name: Set up Node.js
+      uses: actions/setup-node@v2
+      with:
+        node-version: '22'
+
+    - name: Install Dependencies
+      run: |
+        npm install
+        npm install -g @angular/cli
+        npm install angular-cli-ghpages
+
+    - name: Build Project
+      run: ng build --configuration production --base-href "/"
+
+    - name: Set Git identity
+      run: |
+        git config user.name "GitHub Actions"
+        git config user.email "actions@github.com"
+
+    - name: Authenticate with GitHub
+      env:
+        GH_TOKEN: ${{ secrets.TOKEN }}
+      run: |
+        git remote set-url origin https://x-access-token:${GH_TOKEN}@github.com/Jackal-Ears/JackalEarsWebsite.git
+
+    - name: Deploy to GitHub Pages
+      run: |
+        ng deploy --base-href=/ --dir=dist/browser --cname=www.jackalears.com
