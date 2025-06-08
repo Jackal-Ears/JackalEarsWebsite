@@ -1,11 +1,7 @@
 
 <div class="website">
-    
-    <div class="wip">
 
-        <img src="logo.png">
-        <h1>This website is still being developed...</h1>
-
-    </div>
+    <app-navbar *ngIf="currentPath != ''"></app-navbar>
+    <router-outlet></router-outlet>
 
 </div>

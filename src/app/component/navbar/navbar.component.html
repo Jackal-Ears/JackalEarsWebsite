@@ -1,0 +1,32 @@
+
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0" />
+
+<div class="component">
+
+    <div class="left">
+        <div class="title">
+            <img src="logo.png">
+            <h1>Jackal Ears</h1>
+        </div>
+    </div>
+
+    <div class="middle">
+        @for (page of pages; track $index) {
+            <div class="page_link" (click)="navigate(page.path)" [title]="page.name">
+                <span class="material-symbols-outlined icon">{{page.icon}}</span>
+                <h1>{{page.name}}</h1>
+            </div>
+        }
+    </div>
+
+    <div class="right">
+        @for (link of website.links; track $index) {
+            <a [href]="link.link" target="_blank" [title]="link.platform">
+                <div class="image">
+                    <img *ngIf="link.image.length > 10" [src]="link.image" alt="Image" width="36" height="36">
+                </div>
+            </a>
+        }
+    </div>
+
+</div>

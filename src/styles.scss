@@ -1,4 +1,9 @@
 
+@font-face {
+    font-family: main;
+    src: url(./font/ShareTech-Regular.ttf) format("truetype");
+}
+
 a {
     text-decoration: none;
     color: inherit;
@@ -10,13 +15,25 @@ html, body {
     padding: 0;
     height: 100%;
     font-family: main;
-}  
+}
 
 :root {
     --primary-1: #E0141A;
+
+
     --primary-2: #FDFDFC;
+
+
     --primary-3: #521F59;
+
     --primary-4: #28216F;
+
+
     --primary-5: #120D3F;
+    --primary-5-l: #716b9e;
+
+    --primary-6-D: #eca204;
     --primary-6: #FFCC5D;
+    --primary-6-L: #fffde0;
+
 }
