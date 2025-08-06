@@ -27,8 +27,8 @@ export class NavbarComponent {
       icon: "link",
     },
     {
-      path: "schedule",
-      name: "Schedule",
+      path: "events",
+      name: "Events",
       icon: "calendar_month",
     }
   ]

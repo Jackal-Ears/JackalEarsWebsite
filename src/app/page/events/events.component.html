@@ -1,0 +1,110 @@
+
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0" />
+
+<!-- <app-section background="var(--primary-5)" width="50%" height="null">
+    Lorem ipsum dolor sit amet consectetur adipiscing elit. Quisque faucibus ex sapien vitae pellentesque sem placerat. In id cursus mi pretium tellus duis convallis. Tempus leo eu aenean sed diam urna tempor. Pulvinar vivamus fringilla lacus nec metus bibendum egestas. Iaculis massa nisl malesuada lacinia integer nunc posuere. Ut hendrerit semper vel class aptent taciti sociosqu. Ad litora torquent per conubia nostra inceptos himenaeos. Lorem ipsum dolor sit amet consectetur adipiscing elit. Quisque faucibus ex sapien vitae pellentesque sem placerat. In id cursus mi pretium tellus duis convallis. Tempus leo eu aenean sed diam urna tempor. Pulvinar vivamus fringilla lacus nec metus bibendum egestas. Iaculis massa nisl malesuada lacinia integer nunc posuere. Ut hendrerit semper vel class aptent taciti sociosqu. Ad litora torquent per conubia nostra inceptos himenaeos.
+</app-section> -->
+
+<app-section background="var(--primary-5)" width="100%" height="null">
+
+    <div class="event_panels">
+
+        <div class="panel_container one">
+            <div class="panel">
+                <div>
+                    <h1>Shows</h1>
+                    <p>At Jackal Ears Improv, we're all about bringing you entertaining, skillful improv that feels just like catching a real show at the theater. We aim to offer professional improv that is accessible for everyone to enjoy. So, come hang out and immerse yourself in unscripted fun and enjoy some laughs in a chill and welcoming environment!</p>
+                </div>
+                <div class="grid">
+                    <img src="image/placeholder.png">
+                    <img src="image/placeholder.png">
+                    <img src="image/placeholder.png">
+                    <img src="image/placeholder.png">
+                </div>
+            </div>
+        </div>
+
+        <div class="divider1"></div>
+
+        <div class="panel_container two">
+            <div class="panel">
+                <div>
+                    <h1>Classes</h1>
+                    <p>Ready to jump into improv? Jackal Ears offers classes built on solid basic skills that anyone can learn. Kick off your improv journey with our Improv Fundamentals workshop. It's a great, low-pressure way to start or if you're ready to really dig deep and polish your craft, check out our Advanced Improv classes and hone your skills.</p>
+                </div>
+                <div class="grid">
+                    <img src="image/class_4.png">
+                    <img src="image/class_1.png">
+                    <img src="image/class_2.png">
+                    <img src="image/class_3.webp">
+                </div>
+            </div>
+        </div>
+
+        <div class="divider2"></div>
+
+        <div class="panel_container one">
+            <div class="panel">
+                <div>
+                    <h1>Jams</h1>
+                    <p>Been coming to our workshops and just itching to show those skills off? Our community Improv Jams are made just for you! We invite you to hop on stage and share the spotlight, putting on a fun, relaxed performance right alongside your friends and fellow improv fans. It's a fantastic chance to experiment and collaborate.</p>
+                </div>
+                <div class="grid">
+                    <img src="image/placeholder.png">
+                    <img src="image/placeholder.png">
+                    <img src="image/placeholder.png">
+                    <img src="image/placeholder.png">
+                </div>
+                
+            </div>
+        </div>
+
+    </div>
+
+</app-section>
+
+<app-gradient top="var(--primary-5)" bottom="var(--primary-4)" [style.visibility]="scheduleStatus ? '' : 'hidden'"></app-gradient>
+
+<app-section background="var(--primary-5)" width="50%" height="null" *ngIf="!scheduleStatus">
+    <div class="schedule_fail">
+        <h1>No upcoming events...</h1>
+    </div>
+</app-section>
+
+<app-section background="var(--primary-4)" width="50%" height="null">
+    <app-schedule [dayLimit]="3" (scheduleLoaded)="scheduleLoaded($event)"></app-schedule>
+    <!-- <div class="schedule_border">
+    </div> -->
+</app-section>
+
+<!-- 
+<div class="section">
+    <div class="event_types">
+        <div class="type classes">
+            classes
+        </div>
+        <div class="type shows">
+            shows
+        </div>
+    </div>
+</div>
+
+<div class="section schedule">
+
+    <div class="scroll">
+        <app-schedule></app-schedule>
+    </div>
+
+    <div>
+        Class Info
+    </div>
+
+    <div>
+        Show Info
+    </div>
+
+    <div>
+        Page split by workshops, and shows with own schedules
+    </div>
+
+</div> -->

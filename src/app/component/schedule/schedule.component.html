@@ -1,0 +1,46 @@
+
+<div class="schedule" *ngIf="scheduleStatus">
+
+    @for (day of dayEvents; track day[0]) {
+        <div class="day">
+            <h1>{{day[0]}}</h1>
+        </div>
+
+        @for (event of day[1]; track $index) {
+
+            <div class="event" [style.background]="event.color">
+                <div class="icons">
+                    <span class="material-symbols-outlined icon">{{event.icon}}</span>
+                        <span *ngIf="this.typeCount[event.type] > 1" class="material-symbols-outlined icon number">counter_{{event.typeCount}}</span>
+                </div>
+                <div class="content">
+                    <div class="main">
+                        <h1>{{event.name}}</h1>
+                        <p>{{event.description}}</p>
+                        {{event.day}}
+                    </div>
+                    <br>
+                    <div class="tag">
+                        <span class="material-symbols-outlined icon">schedule</span>
+                        <p>{{event.startDisplay}}</p>
+                    </div>
+                    <div class="tag">
+                        <span class="material-symbols-outlined icon">hourglass</span>
+                        <p>Lasts {{event.duration}} hours</p>
+                    </div>
+                    <div class="tag">
+                        <span class="material-symbols-outlined icon">timeline</span>
+                        <p>{{getTimeLeft(event.start).display || 'Start time has passed'}}</p>
+                    </div>
+                </div>
+            </div>
+            
+        }
+    }
+
+    <div class="show_more" *ngIf="daysHidden > 0" (click)="openSchdule()">
+        <h1>Click here to check out the full schedule!</h1>
+        <h2>({{daysHidden}} days are hidden)</h2>
+    </div>
+    
+</div>

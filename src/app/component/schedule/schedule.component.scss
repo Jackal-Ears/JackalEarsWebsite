@@ -1,0 +1,61 @@
+
+.schedule {
+    margin: 50px auto 50px;
+    max-width: 1000px;
+    
+    .day {
+        color: var(--primary-6);
+        text-align: center;
+    }
+
+    .show_more {
+        color: var(--primary-6);
+        text-align: center;
+        margin-bottom: 50px;
+        h2 {
+            font-size: 20px;
+        }
+        cursor: pointer;
+    }
+
+    .event {
+        background: white;
+        margin: 10px;
+        min-height: 100px;
+        display: flex;
+        border: 5px solid var(--primary-5);
+        border-radius: 5px;
+
+        &>.icons {
+            
+            padding: 10px;
+            border-right: 5px solid var(--primary-5);
+            aspect-ratio: 1/1;
+            min-width: 50px;
+            width: 50px;
+                
+            &>span {
+                font-size: 50px;
+                color: var(--primary-6);
+                width: 100%;
+                text-align: center;
+                &.number {
+                    font-size: 25px;
+                }
+            }
+        }
+
+        .content {
+            padding: 10px;
+            flex: 1;
+
+            .tag {
+                display: flex;
+                span {
+                    margin-right: 5px;
+                }
+            }
+        }
+
+    }
+}

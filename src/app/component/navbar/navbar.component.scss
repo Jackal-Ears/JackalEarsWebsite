@@ -20,6 +20,7 @@ h1, h2, p, .icon {
         margin: 3px;
         padding-right: 10px;
         box-sizing: border-box;
+        filter: grayscale(1) brightness(1.5);
     }
     h1 {
         margin: 8px 0px;
@@ -36,6 +37,7 @@ h1, h2, p, .icon {
 .middle {
     display: flex;
     justify-content: space-between;
+    line-height: 30px;
 }
 
 .page_link {
