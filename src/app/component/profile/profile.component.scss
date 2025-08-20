@@ -1,0 +1,45 @@
+.profile {
+    padding: 10px;
+    background: var(--primary-5);
+    border: 5px solid var(--primary-6);
+    border-radius: 10px;
+    box-sizing: border-box;
+    .name {
+        text-align: center;
+        color: var(--primary-6);
+    }
+    .position {
+        text-align: center;
+        font-size: 20px;
+    }
+    .image_center {
+        display: flex;
+        justify-content: center;
+        img {
+            width: 70%;
+        }
+    }
+    img {
+        width: 100%;
+        border-radius: 5px;
+    }
+    .bio {
+        font-size: 20px;
+        text-align: justify;
+        margin: 15px;
+    }
+    .links {
+        width: 100%;
+        display: flex;
+        justify-content: space-between;
+        .link {
+            flex: 1;
+            text-align: center;
+            img {
+                // filter: brightness(0) invert(1);
+                width: 50px;
+                border-radius: 10px;
+            }
+        }
+    }
+}

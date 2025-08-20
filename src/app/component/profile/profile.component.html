@@ -1,0 +1,43 @@
+<div class="profile large" *ngIf="!small">
+    <h1 class="name">{{profile.name}}</h1>
+    <h2 class="position">{{profile.position}}</h2>
+    <div class="image_center">
+        <img [src]="'image/staff/'+profile.image">
+    </div>
+    <p class="bio">{{profile.bio}}</p>
+    <div class="links">
+        @for (link of profile.links; track $index; let i = $index) {
+            <div class="link">
+                <a [href]="link.link" target="_blank" [title]="link.platform.toUpperCase()">
+                    <img [src]="'image/platform/'+link.platform+'.svg'">
+                </a>
+            </div>
+        }
+    </div>
+</div>
+
+<div class="profile small" *ngIf="small">
+    <h1 class="name">{{profile.name}}</h1>
+    <img [src]="'image/staff/'+profile.image">
+</div>
+
+<!-- PRELOAD -->
+<img src="image/staff/alesnya.png" style="display: none;">
+<img src="image/staff/blaiddan.png" style="display: none;">
+<img src="image/staff/hanns.png" style="display: none;">
+<img src="image/staff/modulo.png" style="display: none;">
+<img src="image/staff/pure.png" style="display: none;">
+<img src="image/staff/sage.png" style="display: none;">
+<img src="image/staff/skerek.png" style="display: none;">
+<img src="image/staff/terus.png" style="display: none;">
+<img src="image/staff/timber.png" style="display: none;">
+<img src="image/staff/zidane.png" style="display: none;">
+<img src="image/platform/bluesky.svg" style="display: none;">
+<img src="image/platform/github.svg" style="display: none;">
+<img src="image/platform/gumroad.svg" style="display: none;">
+<img src="image/platform/jinxxy.svg" style="display: none;">
+<img src="image/platform/twitch.svg" style="display: none;">
+<img src="image/platform/twitter.svg" style="display: none;">
+<img src="image/platform/website.svg" style="display: none;">
+<img src="image/platform/youtube.svg" style="display: none;">
+<img src="image/platform/vrchat.svg" style="display: none;">

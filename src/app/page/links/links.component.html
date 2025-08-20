@@ -15,7 +15,7 @@
                     <p>{{link.display}}</p>
                     <br>
                     <div class="image">
-                        <img *ngIf="link.image.length > 10" [src]="link.image" alt="Image" width="36" height="36">
+                        <img [src]="'image/platform/'+link.image" alt="Image" width="36" height="36">
                     </div>
                 </div>
             </div>

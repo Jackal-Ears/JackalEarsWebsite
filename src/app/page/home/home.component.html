@@ -10,35 +10,33 @@
     </div>
 </app-section>
 
-<!-- <app-gradient top="var(--primary-5)" bottom="var(--primary-4)"></app-gradient> -->
+<app-gradient top="var(--primary-5)" bottom="var(--primary-4)"></app-gradient>
 
-<!-- <div class="section s2">
+<app-section height="null" width="1600px" background="var(--primary-4)" [style]="this.castList.length > 0 ? '' : 'opacity: 0;'">
+    <div class="section profiles">
 
-    <div class="box">
-
-        <div class="column">
-            <button (click)="shiftCast(-1)">
-                <span class="material-symbols-outlined icon">arrow_back</span>
-            </button>
+        <div class="profile_button">
+            <div class="center_button">
+                <button (click)="shiftCast(-1)">
+                    <span class="material-symbols-outlined icon">arrow_back</span>
+                </button>
+            </div>
         </div>
 
-        @for (member of getCast(); track member) {
-            <div class="cast">
-                <div class="content">
-                    <h1>{{member.name}}</h1>
-                    <br>
-                    <p>{{member.bio}}</p>
-                </div>
+        @for (member of this.castList; track $index; let i = $index) {
+        
+            <div class="profile_slot" [ngClass]="i==2 ? 'large' : ''">
+                <app-profile [profile]="this.castList[i]" [small]="i!=2"></app-profile>
             </div>
         }
 
-        <div class="column">
-            <button (click)="shiftCast(1)">
-                <span class="material-symbols-outlined icon">arrow_forward</span>
-            </button>
+        <div class="profile_button">
+            <div class="center_button">
+                <button (click)="shiftCast(1)">
+                    <span class="material-symbols-outlined icon">arrow_forward</span>
+                </button>
+            </div>
         </div>
 
     </div>
-
-</div> -->
-
+</app-section>

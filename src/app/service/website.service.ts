@@ -12,10 +12,16 @@ export class WebsiteService {
 
   async asyncConstructor() {
     await this.fetchData();
+    await this.updateStaffList();
     console.log(this.sourcedData)
   }
 
+  async updateStaffList() {
+    this.staffList = await this.http.get("data/staff_list.json").toPromise() || {};
+  }
+
   sourcedData: any = {}
+  staffList: any = []
 
   sources: any = [
     {

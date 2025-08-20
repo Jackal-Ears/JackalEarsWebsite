@@ -1,0 +1,121 @@
+[
+    {
+        "name": "Modulo",
+        "position": "Head of Technology",
+        "bio": "Hello, I am Modulo! I started doing improv in April 2025 when my friend Alesnya invited me to try out a Skits'n'Bits workshop. Since then I have become an improv fanatic and attended numerous workshops and shows. I joined the staff team in June 2025 and have taken on the role of Head of Technology. My main focus is to organize the discord, manage permissions, and help with tech related projects like the website.",
+        "links": [
+            {
+                "platform": "website",
+                "link": "https://www.modulorium.dev/"
+            },
+            {
+                "platform": "github",
+                "link": "https://github.com/modulorium"
+            },
+            {
+                "platform": "bluesky",
+                "link": "https://bsky.app/profile/modulorium.bsky.social"
+            }
+        ],
+        "image": "modulo.png"
+    },
+    {
+        "name": "Sage",
+        "position": "Head of Strategy & Public Relations",
+        "bio": "Hi everyone, I'm Sage, a co-founder and Strategy Manager here at Jackal Ears! I started improv back 2022, when I joined VRchat to improve my self-confidence. My role is to ensure that our shared vision is the driving force behind everything we do. Alongside my amazing husband Hanns, I build the strategies that make our community a cohesive and inspiring place where everyone can grow together. My ultimate goal is to make your experience unforgettable. I'm confident that when you join us, you'll find a community that helps you build skills and truly shine- both onstage and off. ",
+        "links": [],
+        "image": "sage.png"
+    },
+    {
+        "name": "Hanns",
+        "position": "Executive Director",
+        "bio": "Hey everybody! Name’s Hanns, so glad you came to Jackal Ears! I am incredibly blessed to lead this amazing community. I’ve been so fortunate to have learned improv from some of the greats: Kate McKnight, Ms. Dance, Terus, and many others.Thank you to everyone who made this possible: all of the JE staff, my friends, my family, and my Sage. ",
+        "links": [],
+        "image": "hanns.png"
+    },
+    {
+        "name": "Terus",
+        "position": "Operations Manager",
+        "bio": "Hello there, I'm Terus, I make sure the wheels keep turning here at Jackal Ears. With a diverse background in entertaining for over a decade, I'm well suited to putting on a good show. I started doing improv in VR to improve my skill as a streamer, and quickly fell back in love with the art of making stuff up. My goal is to ensure that Jackal Ears performances are of the highest calibre, whether that be through rehearsals, teaching, hosting, or performing. Enjoy the show!",
+        "links": [],
+        "image": "terus.png"
+    },
+    {
+        "name": "Blaiddan",
+        "position": "Community Engagement Lead",
+        "bio": "Hi there! My name is Blaiddan, and I started my improv journey in late 2021. It began with me searching for a community in VRChat. I discovered improv, had never heard of it before, and have been in love with it ever since. I have been with Jackal Ears since its beginning as a performer, but now I work in community engagement and am still a performer.",
+        "links": [
+            {
+                "platform": "twitch",
+                "link": "https://www.twitch.tv/blaiddan"
+            }
+        ],
+        "image": "blaiddan.png"
+    },
+    {
+        "name": "Zidane",
+        "position": "Cast",
+        "bio": "Hey there, I'm Zidane_Beoulve, or just Zidane! I've been learning improv in VRChat since sometime in early 2022, and have been teaching and continuing to learn with Skits'n'Bits since it's founding in Fall of 2022. I've been a performer for Skits'n'Bits on stage, for live interactive events, and acted in several skits during my career. I am a member of A Passing Tale, potentially the first narrative improv troupe in VR, the Rocky Horror Picture Show shadow cast the \"VRChat Affair\", and an actor for \"Shadows Over San Oscuro\". I have performed with several other improv groups here in VRChat, including Improvatars, Improv Knight, Racc Pack, and now Jackal Ears! ",
+        "links": [],
+        "image": "zidane.png"
+    },
+    {
+        "name": "Skerek",
+        "position": "Art Team",
+        "bio": "Hello, I'm Skerek! I started doing improv in October 2023 through Ms. Dances Improv classes and events in the Trans Academy to help with my social anxiety and awkwardness. Ever since the friends I made along the way keep roping me into more improv and I wouldn't have it any other way. I joined the JE Cast in June 2024 and have since been helping with out with anything I can, from Unity to Art to god knows what else!",
+        "links": [
+            {
+                "platform": "jinxxy",
+                "link": "https://jinxxy.com/skerek"
+            },
+            {
+                "platform": "gumroad",
+                "link": "https://skerek.gumroad.com/"
+            },
+            {
+                "platform": "youtube",
+                "link": "https://www.youtube.com/@skerekVR"
+            }
+        ],
+        "image": "skerek.png"
+    },
+    {
+        "name": "Alesnya",
+        "position": "Art Team",
+        "bio": "Hiya, I am Alesnya the local vampire! I started improv in April 2025 after having watched Dropout for a couple months and garnering a keen interest in Improv. At Jackal Ears I teach classes and help in creating environments for our performances.",
+        "links": [
+            {
+                "platform": "github",
+                "link": "https://github.com/Alesnya"
+            }
+        ],
+        "image": "alesnya.png"
+    },
+    {
+        "name": "Timber",
+        "position": "Cast",
+        "bio": "Hi! I'm Timber, your neighborhood catgirl! I started doing improv in January 2024 when I started going to Skits 'n Bits workshops regulary. My first improv show was in May 2025, and joined the staff team as a cast member in July of 2024!",
+        "links": [
+            {
+                "platform": "website",
+                "link": "https://timberthecat.com/"
+            },
+            {
+                "platform": "bluesky",
+                "link": "https://bsky.app/profile/timberthecat.com"
+            },
+            {
+                "platform": "youtube",
+                "link": "https://youtube.com/@TimberTheCatGirl"
+            }
+        ],
+        "image": "timber.png"
+    },
+    {
+        "name": "Pure",
+        "position": "Cast",
+        "bio": " Yooo, I'm Pure! One of the coolest (and humblest) guys in the world.  One night I got together with one of my friends, rolled a dice and started improvising a story. That one roll turned into a year long improvised campaign where I had some of my best memories. After finding a poster for Skits n Bits, I was off to the races. Performing is something I truly enjoy and love to do with Jackal Ears and as long as I'm around I'll put on a show! ",
+        "links": [],
+        "image": "pure.png"
+    }
+]

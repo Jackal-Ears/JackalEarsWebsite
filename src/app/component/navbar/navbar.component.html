@@ -23,7 +23,7 @@
         @for (link of website.sourcedData.links; track $index) {
             <a [href]="link.link" target="_blank" [title]="link.platform">
                 <div class="image">
-                    <img *ngIf="link.image.length > 10" [src]="link.image" alt="Image" width="36" height="36">
+                    <img [src]="'image/platform/'+link.image" alt="Image" width="36" height="36">
                 </div>
             </a>
         }
