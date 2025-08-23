@@ -11,9 +11,8 @@ export class WebsiteService {
   }
 
   async asyncConstructor() {
-    await this.fetchData();
     await this.updateStaffList();
-    console.log(this.sourcedData)
+    await this.fetchData();
   }
 
   async updateStaffList() {

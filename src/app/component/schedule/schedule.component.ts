@@ -19,6 +19,11 @@ export class ScheduleComponent {
   scheduleStatus: boolean = false;
   @Output() scheduleLoaded = new EventEmitter<boolean>();
 
+  apiKey = 'AIzaSyDMaoGBygu0xbl4Qc4C1Xk2BmZjKRZwJ74';
+  calendarId = 'bee1be4da5571fc4b5cdb781ff57ac8fafc5e9e572f1735ad9b3ef4468f99e8f@group.calendar.google.com';
+  calendarSubscribe = 'https://calendar.google.com/calendar/u/1?cid=YmVlMWJlNGRhNTU3MWZjNGI1Y2RiNzgxZmY1N2FjOGZhZmM1ZTllNTcyZjE3MzVhZDliM2VmNDQ2OGY5OWU4ZkBncm91cC5jYWxlbmRhci5nb29nbGUuY29t';
+
+
   constructor(public website: WebsiteService, private router: Router) {
 
   }
@@ -53,10 +58,6 @@ export class ScheduleComponent {
   
   async fetchSchedule() {
 
-    // set variables
-    const apiKey = 'AIzaSyBr6Taa1AqkVYPddUuhMLCAng1MEnXdmOw';
-    const calendarId = 'bee1be4da5571fc4b5cdb781ff57ac8fafc5e9e572f1735ad9b3ef4468f99e8f@group.calendar.google.com';
-
     // get time range
     const today = new Date();
     const timeMin = today.toISOString();
@@ -68,8 +69,8 @@ export class ScheduleComponent {
     let calendarAll: any;
     let calendarCombined: any;
     try {
-      calendarAll = await this.website.http.get(`https://www.googleapis.com/calendar/v3/calendars/${encodeURIComponent(calendarId)}/events?key=${apiKey}&timeMin=${timeMin}&timeMax=${timeMax}&singleEvents=true&orderBy=startTime`).toPromise();
-      calendarCombined = await this.website.http.get(`https://www.googleapis.com/calendar/v3/calendars/${encodeURIComponent(calendarId)}/events?key=${apiKey}`).toPromise();
+      calendarAll = await this.website.http.get(`https://www.googleapis.com/calendar/v3/calendars/${encodeURIComponent(this.calendarId)}/events?key=${this.apiKey}&timeMin=${timeMin}&timeMax=${timeMax}&singleEvents=true&orderBy=startTime`).toPromise();
+      calendarCombined = await this.website.http.get(`https://www.googleapis.com/calendar/v3/calendars/${encodeURIComponent(this.calendarId)}/events?key=${this.apiKey}`).toPromise();
     } catch {
       this.scheduleLoadedTrigger(false);
     }
@@ -86,6 +87,9 @@ export class ScheduleComponent {
 
       // recurrence
       let recurrence: string = event.recurrence ? (event.recurrence[0].includes("DAILY") ? "daily" : event.recurrence[0].includes("WEEKLY") ? "weekly" : "unique") : "single"
+
+      // calendar links
+      const calendarLinks = this.generateCalendarLinks(event);
       
       // per event metadata
       if (!this.typeCount[type]) this.typeCount[type] = 0
@@ -95,7 +99,8 @@ export class ScheduleComponent {
           color: `var(--event-${type}-${this.typeCount[type]})`,
           type,
           typeCount: this.typeCount[type],
-          recurrence
+          recurrence,
+          calendarLinks
         }
 
       }
@@ -127,6 +132,53 @@ export class ScheduleComponent {
     this.scheduleLoadedTrigger(this.dayEvents.length > 0);
   }
 
+  generateCalendarLinks(event: any): { single?: string, recurring?: string, subscribe?: string } {
+    const links: { single?: string, recurring?: string, subscribe?: string } = {};
+    const baseUrl = "https://calendar.google.com/calendar/render?action=TEMPLATE";
+  
+    // --- Single ---
+    const singleEventDetails = {
+      title: event.summary ? `&text=${encodeURIComponent(event.summary)}` : "",
+      dates: "",
+      ctz: "",
+      details: event.description ? `&details=${encodeURIComponent(event.description)}` : "",
+      location: event.location ? `&location=${encodeURIComponent(event.location)}` : ""
+    };
+  
+    if (event.start && event.end) {
+      if (event.start.date && event.end.date) {
+        const startDate = event.start.date.replace(/-/g, "");
+        const endDate = event.end.date.replace(/-/g, "");
+        singleEventDetails.dates = `&dates=${startDate}/${endDate}`;
+      } else if (event.start.dateTime && event.end.dateTime) {
+        const startDate = event.start.dateTime.substring(0, 19).replace(/[:-]/g, "");
+        const endDate = event.end.dateTime.substring(0, 19).replace(/[:-]/g, "");
+        singleEventDetails.dates = `&dates=${startDate}/${endDate}`;
+        singleEventDetails.ctz = event.start.timeZone ? `&ctz=${encodeURIComponent(event.start.timeZone)}` : "";
+      }
+    }
+  
+    links.single = `${baseUrl}${singleEventDetails.title}${singleEventDetails.dates}${singleEventDetails.details}${singleEventDetails.location}${singleEventDetails.ctz}`;
+  
+    // --- Recurring ---
+    if (event.recurrence && event.recurrence.length > 0) {
+      const recurringEventDetails = {
+        title: event.summary ? `&text=${encodeURIComponent(event.summary)}` : "",
+        dates: singleEventDetails.dates, // Use the same dates from the first instance
+        recurrence: `&recur=${encodeURIComponent(event.recurrence[0])}`,
+        details: singleEventDetails.details,
+        location: singleEventDetails.location,
+        ctz: singleEventDetails.ctz
+      };
+      links.recurring = `${baseUrl}${recurringEventDetails.title}${recurringEventDetails.dates}${recurringEventDetails.recurrence}${recurringEventDetails.details}${recurringEventDetails.location}${recurringEventDetails.ctz}`;
+    }
+  
+    // --- Subscribe ---
+    links.subscribe = this.calendarSubscribe;
+  
+    return links;
+  }
+
   scheduleLoadedTrigger(state: boolean) {
     this.scheduleStatus = state;
     this.scheduleLoaded.emit(state); 
@@ -153,7 +205,8 @@ export class ScheduleComponent {
       color: this.eventTypeFormatting[type].color,
       type: type,
       typeCount: this.eventMetadata[event.etag].typeCount,
-      icon: this.eventTypeFormatting[type].icon
+      icon: this.eventTypeFormatting[type].icon,
+      links: this.eventMetadata[event.etag].calendarLinks,
     }
   }
 

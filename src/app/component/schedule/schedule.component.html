@@ -20,17 +20,36 @@
                         {{event.day}}
                     </div>
                     <br>
-                    <div class="tag">
-                        <span class="material-symbols-outlined icon">schedule</span>
-                        <p>{{event.startDisplay}}</p>
-                    </div>
-                    <div class="tag">
-                        <span class="material-symbols-outlined icon">hourglass</span>
-                        <p>Lasts {{event.duration}} hours</p>
-                    </div>
-                    <div class="tag">
-                        <span class="material-symbols-outlined icon">timeline</span>
-                        <p>{{getTimeLeft(event.start).display || 'Start time has passed'}}</p>
+                    <div class="details">
+                        <div class="stats">
+
+                            <div class="tag">
+                                <span class="material-symbols-outlined icon">schedule</span>
+                                <p>{{event.startDisplay}}</p>
+                            </div>
+                            <div class="tag">
+                                <span class="material-symbols-outlined icon">hourglass</span>
+                                <p>Lasts {{event.duration}} hours</p>
+                            </div>
+                            <div class="tag">
+                                <span class="material-symbols-outlined icon">timeline</span>
+                                <p>{{getTimeLeft(event.start).display || 'Start time has passed'}}</p>
+                            </div>
+
+                        </div>
+                        <div class="links">
+                            <div class="links_offset">
+                                <a *ngIf="event.links.single" [href]="event.links.single" title="Add Event">
+                                    <span class="material-symbols-outlined icon">calendar_add_on</span>
+                                </a>
+                                <a *ngIf="event.links.recurring" [href]="event.links.recurring" title="Add Event Series">
+                                    <span class="material-symbols-outlined icon">event_repeat</span>
+                                </a>
+                                <a *ngIf="event.links.subscribe" [href]="event.links.subscribe" title="Subscribe to Calendar">
+                                    <span class="material-symbols-outlined icon">event_upcoming</span>
+                                </a>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
