@@ -13,9 +13,7 @@ import { CommonModule } from '@angular/common';
 })
 export class HomeComponent {
 
-  constructor(public website: WebsiteService) {
-    console.log(this.castList);
-  }
+  constructor(public website: WebsiteService) {}
 
   async ngOnInit() {
     await this.website.updateStaffList();

@@ -49,12 +49,38 @@
             padding: 10px;
             flex: 1;
 
-            .tag {
+            .details {
                 display: flex;
-                span {
-                    margin-right: 5px;
+                justify-content: space-between;
+
+                .stats {
+
+                    .tag {
+                        display: flex;
+                        span {
+                            margin-right: 5px;
+                        }
+                    }
+
                 }
+
+                .links {
+                    display: flex;
+                    flex-direction: column;
+                    justify-content: end;
+                    
+                    a {
+                        margin: 100px 0px 0px 20px;
+                    }
+                    
+                    span {
+                        font-size: 40px;
+                    }
+                    
+                }
+
             }
+
         }
 
     }
