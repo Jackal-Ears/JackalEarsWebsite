@@ -1,5 +1,5 @@
 
-<app-section height="null">
+<div class="section_container">
     <div class="section title">
         <img src="logo.png">
         <div class="text">
@@ -8,11 +8,11 @@
             At Jackal Ears, we believe in the power of dedicated practice. Our performers commit to rigorous training, honing their craft to ensure every show is a masterclass in comedic timing, quick wit, and genuine connection. This dedication allows each individual to truly shine, sparking uproarious laughter and crafting unforgettable moments for our audiences.
         </div>
     </div>
-</app-section>
+</div>
 
 <app-gradient top="var(--primary-5)" bottom="var(--primary-4)"></app-gradient>
 
-<app-section height="null" width="1600px" background="var(--primary-4)" [style]="this.castList.length > 0 ? '' : 'opacity: 0;'">
+<div class="section_container light">
     <div class="section profiles">
 
         <div class="profile_button">
@@ -25,8 +25,8 @@
 
         @for (member of this.castList; track $index; let i = $index) {
         
-            <div class="profile_slot" [ngClass]="i==2 ? 'large' : ''">
-                <app-profile [profile]="this.castList[i]" [small]="i!=2"></app-profile>
+            <div class="profile_slot" [ngClass]="i==(this.castList.length-1)/2 ? 'large' : ''">
+                <app-profile [profile]="this.castList[i]" [small]="i!=(this.castList.length-1)/2"></app-profile>
             </div>
         }
 
@@ -39,4 +39,4 @@
         </div>
 
     </div>
-</app-section>
+</div>

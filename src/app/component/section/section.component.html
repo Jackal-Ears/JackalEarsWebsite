@@ -1,7 +1,7 @@
 
 <div class="outer" [style.background]="getBackground()" [style.padding]="padding">
 
-    <div class="inner" [style]='{width}' [style.height]="height ? height : null" [style.background]="getInnerBackground()">
+    <div class="inner" [style.width]='width+"px"' [style.height]="height ? height : null" [style.background]="getInnerBackground()">
 
         <ng-content></ng-content>
 

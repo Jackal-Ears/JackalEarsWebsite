@@ -4,9 +4,9 @@
 <div class="component">
 
     <div class="left">
-        <div class="title">
+        <div class="title" title="Jackal Ears">
             <img src="logo.png">
-            <h1>Jackal Ears</h1>
+            <h1 class="mobile_rm">Jackal Ears</h1>
         </div>
     </div>
 
@@ -14,14 +14,14 @@
         @for (page of pages; track $index) {
             <div class="page_link" (click)="navigate(page.path)" [title]="page.name">
                 <span class="material-symbols-outlined icon">{{page.icon}}</span>
-                <h1>{{page.name}}</h1>
+                <h1 class="mobile_rm">{{page.name}}</h1>
             </div>
         }
     </div>
 
     <div class="right">
         @for (link of website.sourcedData.links; track $index) {
-            <a [href]="link.link" target="_blank" [title]="link.platform">
+            <a [href]="link.link" target="_blank" [title]="link.platform" class="mobile_rm">
                 <div class="image">
                     <img [src]="'image/platform/'+link.image" alt="Image" width="36" height="36">
                 </div>

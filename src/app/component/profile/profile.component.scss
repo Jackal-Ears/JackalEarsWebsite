@@ -43,3 +43,13 @@
         }
     }
 }
+
+@media (max-width: 800px) {
+    .profile {
+        padding: 1px;
+    }
+    .bio {
+        text-align: left;
+    }
+}
+

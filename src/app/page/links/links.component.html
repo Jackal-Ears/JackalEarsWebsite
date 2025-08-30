@@ -1,11 +1,12 @@
 
-<app-section background="var(--primary-5)" width="30%" height="null">
+<div class="section_container">
     <div class="section intro">
         <h1>Stay connected with our community!</h1>
     </div>
-</app-section>
 
-<app-section background="var(--primary-5)" width="70%" height="null">
+</div>
+
+<div class="section_container">
     <div class="section links">
         @for (link of website.sourcedData.links; let i = $index ; track $index) {
             <a [href]="link.link" target="_blank" [title]="link.platform">
@@ -15,61 +16,12 @@
                     <p>{{link.display}}</p>
                     <br>
                     <div class="image">
-                        <img [src]="'image/platform/'+link.image" alt="Image" width="36" height="36">
+                        <img [src]="'image/platform/'+link.image" alt="Image">
                     </div>
                 </div>
             </div>
             </a>
         }
     </div>
-</app-section>
 
-<!-- @for (link of website.sourcedData.links; let i = $index ; track $index) { -->
-
-
-    <!-- <app-section *ngIf="i%2==1" background="var(--primary-5)" width="30%" height="null">
-        <div class="section">
-            <div class="inner">
-    
-                <div>
-                    <h1>{{link.platform}}</h1>
-                    <h2>{{link.display}}</h2>
-                </div>
-
-                <div>
-                    <div class="image">
-                        <img *ngIf="link.image.length > 10" [src]="link.image" alt="Image" width="36" height="36">
-                    </div>
-                </div>
-    
-            </div>
-        </div> -->
-
-        <!-- <a [href]="link.link" target="_blank" [title]="link.platform">
-        </a> -->
-        
-    <!-- </app-section>
-    
-    <app-section *ngIf="i%2==0" background="var(--primary-5)" width="30%" height="null">
-        <div class="section">
-            <div class="inner">
-    
-                <div>
-                    <div class="image">
-                        <img *ngIf="link.image.length > 10" [src]="link.image" alt="Image" width="36" height="36">
-                    </div>
-
-                </div>
-                <div style="text-align: right;">
-                    <h1>{{link.platform}}</h1>
-                    <p>{{link.display}}</p>
-                </div>
-
-
-            </div>
-        </div>
-
-    </app-section> -->
-
-<!-- } -->
-
+</div>
