@@ -1,4 +1,15 @@
 
+.section_container {
+    width: 100%;
+    padding: 0px 10px 0px 10px;
+    box-sizing: border-box;
+    border: 1px solid transparent;
+    background-color: var(--primary-5);
+    &.light {
+        background-color: var(--primary-4);
+    }
+}
+
 .section {
     border-radius: 10px;
     display: flex;
@@ -29,8 +40,6 @@
     text-align: center;
     box-sizing: border-box;
 
-    h1 {
-    }
     p {
         padding-bottom: 10px;
         border-bottom: 5px solid var(--primary-6);
@@ -53,13 +62,16 @@
     }
 }
 
-// .inner {
-//     display: flex;
-//     justify-content: space-between;
-//     padding: 30px;
-// }
 
-// img {
-//     height: 100px;
-//     width: 100px;
-// }
+@media (max-width: 800px) {
+    .image {
+        img {
+            max-width: 50%;
+            margin: 0px;
+        }
+    }
+    .link {
+        aspect-ratio: 1.2;
+    }
+}
+

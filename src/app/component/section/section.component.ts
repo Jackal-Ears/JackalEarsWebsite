@@ -1,4 +1,4 @@
-import { Component, Input } from '@angular/core';
+import { Component, Input, HostListener } from '@angular/core';
 
 @Component({
   selector: 'app-section',
@@ -10,7 +10,7 @@ export class SectionComponent {
 
   @Input() background: string = "";
   @Input() inner_bg: string = "";
-  @Input() width: string = "50%";
+  @Input() width: number = 1600;
   @Input() height: string = "100vh";
   @Input() gradient: number = 0;
   @Input() padding: string = "0px";
@@ -30,6 +30,13 @@ export class SectionComponent {
       return this.background
     } else {
       return this.inner_bg
+    }
+  }
+
+  @HostListener('window:resize', ['$event'])
+  onWindowResize(event: Event) {
+    if (window.innerWidth < this.width) {
+      this.width = window.innerWidth;
     }
   }
 
